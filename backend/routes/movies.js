@@ -1,4 +1,4 @@
-movieconst router = require('express').Router();
+const router = require('express').Router();
 let Movie = require('../models/movie.model');
 
 router.route('/').get((req, res) => {
