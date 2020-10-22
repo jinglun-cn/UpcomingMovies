@@ -10,14 +10,14 @@ export default class CreateMovie extends Component {
     this.onChangeTheater = this.onChangeTheater.bind(this);
     this.onChangeMovie = this.onChangeMovie.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
-    this.onChangeReleased_date = this.onChangeReleased_date.bind(this);
+    this.onChangeRelease_date = this.onChangeRelease_date.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       theater: '',
       movie: '',
       duration: 0,
-      released_date: new Date(),
+      release_date: new Date(),
       theaters: []
     }
   }
@@ -56,9 +56,9 @@ export default class CreateMovie extends Component {
     })
   }
 
-  onChangeReleased_date(released_date) {
+  onChangeRelease_date(release_date) {
     this.setState({
-      released_date: released_date
+      release_date: release_date
     })
   }
 
@@ -69,7 +69,7 @@ export default class CreateMovie extends Component {
       theater: this.state.theater,
       movie: this.state.movie,
       duration: this.state.duration,
-      released_date: this.state.released_date
+      release_date: this.state.release_date
     }
 
     console.log(movie);
@@ -121,11 +121,11 @@ export default class CreateMovie extends Component {
               />
         </div>
         <div className="form-group">
-          <label>Released date: </label>
+          <label>Release date: </label>
           <div>
             <DatePicker
-              selected={this.state.released_date}
-              onChange={this.onChangeReleased_date}
+              selected={this.state.release_date}
+              onChange={this.onChangeRelease_date}
             />
           </div>
         </div>

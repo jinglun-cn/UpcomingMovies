@@ -11,13 +11,13 @@ router.route('/add').post((req, res) => {
   const theater = req.body.theater;
   const movie = req.body.movie;
   const duration = Number(req.body.duration);
-  const released_date = Date.parse(req.body.released_date);
+  const release_date = Date.parse(req.body.release_date);
 
   const newMovie = new Movie({
     theater,
     movie,
     duration,
-    released_date,
+    release_date,
   });
 
   newMovie.save()

@@ -6,7 +6,7 @@ const movieSchema = new Schema({
   theater: { type: String, required: true },
   movie: { type: String, required: true },
   duration: { type: Number, required: true },
-  released_date: { type: Date, required: true },
+  release_date: { type: Date, required: true },
 }, {
   timestamps: true,
 });
