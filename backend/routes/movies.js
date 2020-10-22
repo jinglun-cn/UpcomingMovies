@@ -36,12 +36,12 @@ router.route('/:id').delete((req, res) => {
 });
 router.route('/update/:id').post((req, res) => {
   Movie.findById(req.params.id)
-    .then(exercise => {
-      exercise.username = req.body.username;
-      exercise.description = req.body.description;
-      exercise.duration = Number(req.body.duration);
-      exercise.date = Date.parse(req.body.date);
-      exercise.save()
+    .then(movie => {
+      movie.theater = req.body.theater;
+      movie.movie = req.body.movie;
+      movie.duration = Number(req.body.duration);
+      movie.release_date = Date.parse(req.body.release_date);
+      movie.save()
         .then(() => res.json('Movie updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
     })
