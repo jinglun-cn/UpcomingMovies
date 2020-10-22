@@ -33,7 +33,9 @@ export default class CreateTheater extends Component {
 
     this.setState({
       theater: ''
-    })
+    });
+
+    window.location = '/';
   }
 
   render() {

@@ -68,9 +68,9 @@ export default class EditMovie extends Component {
     })
   }
 
-  onChangeRelease_date(release_date) {
+  onChangeRelease_date(date) {
     this.setState({
-      release_date: release_date
+      release_date: date
     })
   }
 
@@ -133,7 +133,7 @@ export default class EditMovie extends Component {
               />
         </div>
         <div className="form-group">
-          <label>Release_date: </label>
+          <label>Release date: </label>
           <div>
             <DatePicker
               selected={this.state.release_date}
