@@ -23,7 +23,7 @@ export default class CreateMovie extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/theaters/')
+    axios.get('/theaters/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -74,7 +74,7 @@ export default class CreateMovie extends Component {
 
     console.log(movie);
 
-    axios.post('http://localhost:5000/movies/add', movie)
+    axios.post('/movies/add', movie)
       .then(res => console.log(res.data));
 
     window.location = '/';

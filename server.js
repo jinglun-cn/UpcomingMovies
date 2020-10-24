@@ -10,7 +10,8 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI;mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
+const uri = process.env.ATLAS_URI;
+mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true, useCreateIndex: true });
 const connection = mongoose.connection;connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
@@ -20,6 +21,27 @@ const theatersRouter = require('./routes/theaters');
 app.use('/movies', moviesRouter);
 app.use('/theaters', theatersRouter);
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('build'));
+}
+// app.use(express.static('./build'));
+
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
+
+
+//
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import App from './App';
+// import * as serviceWorker from './serviceWorker';
+//
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 const Movie = props => (
   <tr>
     <td>{props.movie.theater}</td>
@@ -24,7 +25,7 @@ export default class MoviesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/movies/')
+    axios.get('/movies/')
       .then(response => {
         this.setState({ movies: response.data })
       })
@@ -34,7 +35,7 @@ export default class MoviesList extends Component {
   }
 
   deleteMovie(id) {
-    axios.delete('http://localhost:5000/movies/'+id)
+    axios.delete('/movies/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

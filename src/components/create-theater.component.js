@@ -28,7 +28,7 @@ export default class CreateTheater extends Component {
 
     console.log(theater);
 
-    axios.post('http://localhost:5000/theaters/add', theater)
+    axios.post('/theaters/add', theater)
       .then(res => console.log(res.data));
 
     this.setState({

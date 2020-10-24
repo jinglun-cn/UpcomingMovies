@@ -23,7 +23,7 @@ export default class EditMovie extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/movies/'+this.props.match.params.id)
+    axios.get('/movies/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           theater: response.data.theater,
@@ -36,7 +36,7 @@ export default class EditMovie extends Component {
         console.log(error);
       })
 
-    axios.get('http://localhost:5000/theaters/')
+    axios.get('/theaters/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -86,7 +86,7 @@ export default class EditMovie extends Component {
 
     console.log(movie);
 
-    axios.post('http://localhost:5000/movies/update/' + this.props.match.params.id, movie)
+    axios.post('/movies/update/' + this.props.match.params.id, movie)
       .then(res => console.log(res.data));
 
     window.location = '/';
