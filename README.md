@@ -5,4 +5,4 @@ UpcomingMovies is a full stack web application, which allows users to view/add/e
 The front-end interface is based on **React** and **Bootstrap**. The back-end services are implemented using **Node.js** and **Express.js**, integrated with **MongoDB Atlas** managing movie and theater entries.
 
 
-![fig](https://github.com/jinglun-cn/UpcomingMovies/blob/master/figure/screenshot_movies.png?raw=true)
+![fig](https://github.com/jinglun-cn/UpcomingMovies/blob/main/figure/screenshot_movies.png?raw=true)
