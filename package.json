@@ -1,5 +1,5 @@
 {
-  "name": "fullstack-logger",
+  "name": "upcomingmovies",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,8 @@
   "scripts": {
     "start": "node server.js",
     "build": "react-scripts build",
-    "dev": "node server & npm run start",
+    "dev": "(node server.js) & react-scripts start",
+    "reactstart": "react-scripts start",
     "heroku-postbuild": "npm install && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

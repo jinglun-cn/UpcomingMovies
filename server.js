@@ -24,24 +24,7 @@ app.use('/theaters', theatersRouter);
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('build'));
 }
-// app.use(express.static('./build'));
-
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
-
-
-//
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import * as serviceWorker from './serviceWorker';
-//
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
